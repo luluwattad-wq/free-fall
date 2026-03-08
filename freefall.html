@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>امتحان الفيزياء - السقوط الحر</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4a4e69;
+            border-bottom: 2px solid #e7e7e7;
+            padding-bottom: 10px;
+        }
+        .instructions {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #2b2d42;
+        }
+        .question-card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .question-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        .options label:hover {
+            background-color: #f0f0f0;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            transform: scale(1.2);
+            margin-left: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
+            font-family: inherit;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .equation-input {
+            width: 60px !important;
+            padding: 5px !important;
+            text-align: center;
+            margin: 0 5px;
+            display: inline-block;
+        }
+        .equation-container {
+            direction: ltr;
+            text-align: left;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px dashed #ccc;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #4a4e69;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #22223b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>فحص في موضوع السقوط الحر</h1>
+    
+    <div class="instructions">
+        ملاحظة: لحل الأسئلة الحسابية، افترضوا أن تسارع الجاذبية الأرضية g = 10 m/s&sup2; لتسهيل الحسابات، وتجاهلوا مقاومة الهواء.
+    </div>
+
+    <form id="quizForm" action="https://formspree.io/f/mnjgnbvp" method="POST">
+        
+        <input type="hidden" name="Final_Score" id="hiddenScore" value="لم تحسب">
+
+        <div class="question-card">
+            <div class="question-title">بيانات الطالب</div>
+            <div class="input-group">
+                <label>الاسم الثلاثي:</label>
+                <input type="text" name="Student_Name" required style="width: 95%;">
+            </div>
+            <div class="input-group">
+                <label>البريد الإلكتروني:</label>
+                <input type="email" name="Student_Email" required style="width: 95%;">
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">السؤال 1: ما هو تعريف السقوط الحر؟</div>
+            <div class="options">
+                <label><input type="radio" name="Q1_Definition" value="حركة للأسفل" required> حركة جسم يتحرك للأسفل.</label>
+                <label><input type="radio" name="Q1_Definition" value="جاذبية فقط"> حركة تحت تأثير قوة الجاذبية فقط.</label>
+                <label><input type="radio" name="Q1_Definition" value="من أقصى ارتفاع"> حركة جسم يسقط من لحظة وصوله إلى أقصى ارتفاع ويبدأ في السقوط.</label>
+                <label><input type="radio" name="Q1_Definition" value="إفلات على الأرض"> حركة جسم يتم تحريره من حالة سكون على كوكب الأرض.</label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">السؤال 2: يُخرج أمير النقود من محفظته، وفجأة تسقط عملة من المحفظة من حالة السكون. ارتفاع المحفظة عن الأرض هو 1.51 متر.</div>
+            <div class="input-group">
+                <img src="https://i.postimg.cc/2SLn41LF/Picture1.png" alt="صورة السؤال" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px;">
+                <label>أ. كم من الوقت سيمضي بالثواني حتى تصطدم العملة بالأرض؟</label>
+                <input type="number" step="0.01" name="Q2a_Time" required>
+            </div>
+            <div class="input-group">
+                <label>ب. بأي سرعة ستصطدم العملة بالأرض؟ (m/s)</label>
+                <input type="number" step="0.1" name="Q2b_Velocity" required>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">السؤال 3: صح / خطأ: إذا سقطت عملة من فئة 5 شيكل بدلاً من عملة الشيكل، فإنها ستصل إلى الأرض في وقت أقصر.</div>
+            <div class="options">
+                <label><input type="radio" name="Q3_Mass_Effect" value="صحيح" required> صحيح</label>
+                <label><input type="radio" name="Q3_Mass_Effect" value="غير صحيح"> غير صحيح</label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">السؤال 4: كيف سيتغير الوقت الذي تستغرقه العملة للاصطدام بالأرض إذا سقطت من ارتفاع أقل بـ 4 مرات؟</div>
+            <div class="options">
+                <label><input type="radio" name="Q4_Height_Change" value="أقل بـ 4 مرات" required> سيكون الوقت أقل بـ 4 مرات.</label>
+                <label><input type="radio" name="Q4_Height_Change" value="أقل بـ 16 مرة"> سيكون الوقت أقل بـ 16 مرة.</label>
+                <label><input type="radio" name="Q4_Height_Change" value="أقل بـ 2 مرات"> سيكون الوقت أقل بـ 2 مرات (النصف).</label>
+                <label><input type="radio" name="Q4_Height_Change" value="لن يتغير"> لن يتغير الوقت.</label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">السؤال 5: تلعب روني كرة الطائرة وترمي الكرة إلى أعلى تماماً. سنحدد محور موقع نقطة أصله على الأرض واتجاهه الموجب نحو الأعلى. اختر العبارة الصحيحة:</div>
+            <div class="options">
+                <label><input type="radio" name="Q5_Acceleration_Direction" value="سالب دائماً" required> تسارع الكرة سالب طوال فترة حركتها.</label>
+                <label><input type="radio" name="Q5_Acceleration_Direction" value="موجب ثم سالب"> تسارع الكرة موجب حتى أقصى ارتفاع ثم يصبح سالباً.</label>
+                <label><input type="radio" name="Q5_Acceleration_Direction" value="موجب دائماً"> تسارع الكرة موجب طوال فترة حركتها.</label>
+                <label><input type="radio" name="Q5_Acceleration_Direction" value="سالب ثم موجب"> تسارع الكرة سالب حتى أقصى ارتفاع وبعد ذلك يصبح موجباً.</label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">السؤال 6: ترمي روني الكرة من ارتفاع 1.5 متر فوق سطح الأرض بسرعة 4 m/s نحو الأعلى.</div>
+            <div class="input-group">
+                <img src="https://i.postimg.cc/9FJkpv6x/Picture2.png" alt="صورة السؤال" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px;">
+
+                <label>أ. اكتبوا معادلة حركة الكرة. أدخلوا القيم العددية فقط في المربعات المناسبة لتعويض المعاملات (y₀, v₀, ½g):</label>
+                <div class="equation-container">
+                    y(t) = 
+                    <input type="number" step="any" name="Q6d_y0" class="equation-input" placeholder="y₀" required> 
+                    + 
+                    <input type="number" step="any" name="Q6d_v0" class="equation-input" placeholder="v₀" required> 
+                    &middot; t + 
+                    <input type="number" step="any" name="Q6d_half_g" class="equation-input" placeholder="½g" required> 
+                    &middot; t&sup2;
+  
+              </div>
+                <label>ب. كم من الوقت بالثواني ستستغرق الكرة للوصول إلى أقصى ارتفاع؟ والذي به تكون سرعتها مساوية لصفر تمامًا؟</label>
+                <input type="number" step="0.1" name="Q6a_Time_Up" required>
+            </div>
+            <div class="input-group">
+                <label>ج. ما هو أقصى ارتفاع بالأمتار ستصل إليه الكرة (بالنسبة للأرض)؟</label>
+                <input type="number" step="0.1" name="Q6b_Max_Height" required>
+            </div>
+            <div class="input-group">
+                <label>د. كم من الوقت بالثواني ستستغرق الكرة للوصول إلى الأرض من لحظة رميها؟</label>
+                <input type="number" step="0.01" name="Q6c_Total_Time" required>
+            </div>
+            <div class="input-group">
+
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">السؤال 7: تدّعي روني أنه عند أقصى ارتفاع تصبح سرعة الكرة صفراً، ولذلك فإن تسارعها أيضاً يصبح صفراً هناك. هل ادعاؤها صحيح؟</div>
+            <div class="options">
+                <label><input type="radio" name="Q7_Zero_Velocity_Acceleration" value="صحيح" required> صحيح</label>
+                <label><input type="radio" name="Q7_Zero_Velocity_Acceleration" value="غير صحيح"> غير صحيح</label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">السؤال 8: أي من الحالات التالية تُعتبر جسماً يسقط سقوطاً حراً؟ (يمكن اختيار أكثر من إجابة واحدة بافتراض إهمال مقاومة الهواء حيثما لزم)</div>
+            <div class="options">
+                <label><input type="checkbox" name="Q8_FreeFall_Options" value="عصفور يطير"> حركة عصفور يطير في السماء.</label>
+                <label><input type="checkbox" name="Q8_FreeFall_Options" value="حركة القمر"> حركة القمر حول الكرة الأرضية.</label>
+                <label><input type="checkbox" name="Q8_FreeFall_Options" value="قمر صناعي"> حركة قمر صناعي بدون محرك حول الأرض.</label>
+                <label><input type="checkbox" name="Q8_FreeFall_Options" value="كرة سلة"> حركة كرة سلة قذفها لاعب باتجاه السلة.</label>
+                <label><input type="checkbox" name="Q8_FreeFall_Options" value="تفاحة للأعلى"> تفاحة تم رميها للأعلى.</label>
+                <label><input type="checkbox" name="Q8_FreeFall_Options" value="كرة من سكون"> كرة تم تحريرها من حالة سكون.</label>
+                <label><input type="checkbox" name="Q8_FreeFall_Options" value="مظلي يهبط"> مظلي يهبط ببطء بعد فتح مظلته.</label>
+                <label><input type="checkbox" name="Q8_FreeFall_Options" value="طائرة نفاثة"> طائرة نفاثة تحلق بسرعة ثابتة.</label>
+            </div>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="processAndSubmit()">إرسال الإجابات</button>
+    </form>
+</div>
+
+<script>
+    function processAndSubmit() {
+        let form = document.getElementById("quizForm");
+        
+        // الخطوة 1: التحقق من أن الطالب أجاب على جميع الأسئلة
+        if (!form.checkValidity()) {
+            form.reportValidity(); // يعرض تنبيهات المتصفح الحمراء على الحقول الفارغة
+            return; // توقف هنا ولا تكمل
+        }
+
+        // الخطوة 2: حساب النتيجة
+        let score = 0;
+
+        function getRadioVal(name) {
+            let elements = document.getElementsByName(name);
+            for (let i = 0; i < elements.length; i++) {
+                if (elements[i].checked) return elements[i].value;
+            }
+            return "";
+        }
+
+        function getNumVal(name) {
+            let elements = document.getElementsByName(name);
+            if(elements.length > 0) {
+                let val = parseFloat(elements[0].value);
+                return isNaN(val) ? 0 : val;
+            }
+            return 0;
+        }
+
+        if (getRadioVal("Q1_Definition") === "جاذبية فقط") score += 10;
+
+        if (Math.abs(getNumVal("Q2a_Time") - 0.55) <= 0.05) score += 5;
+        if (Math.abs(getNumVal("Q2b_Velocity") - 5.5) <= 0.1) score += 5;
+
+        if (getRadioVal("Q3_Mass_Effect") === "غير صحيح") score += 10;
+
+        if (getRadioVal("Q4_Height_Change") === "أقل بـ 2 مرات") score += 10;
+
+        if (getRadioVal("Q5_Acceleration_Direction") === "سالب دائماً") score += 10;
+
+        if (Math.abs(getNumVal("Q6a_Time_Up") - 0.4) <= 0.05) score += 4;
+        if (Math.abs(getNumVal("Q6b_Max_Height") - 2.3) <= 0.1) score += 4;
+        if (Math.abs(getNumVal("Q6c_Total_Time") - 1.08) <= 0.05) score += 4;
+        
+        if (getNumVal("Q6d_y0") === 1.5) score += 2;
+        if (getNumVal("Q6d_v0") === 4) score += 3;
+        if (getNumVal("Q6d_half_g") === -5) score += 3;
+
+        if (getRadioVal("Q7_Zero_Velocity_Acceleration") === "غير صحيح") score += 10;
+
+        let q8Boxes = document.getElementsByName("Q8_FreeFall_Options");
+        let q8Score = 0;
+        let correctAnswers = ["حركة القمر", "قمر صناعي", "كرة سلة", "تفاحة للأعلى", "كرة من سكون"];
+        
+        for (let i = 0; i < q8Boxes.length; i++) {
+            if (q8Boxes[i].checked) {
+                if (correctAnswers.indexOf(q8Boxes[i].value) !== -1) {
+                    q8Score += 4;
+                } else {
+                    q8Score -= 4;
+                }
+            }
+        }
+        if (q8Score < 0) q8Score = 0;
+        score += q8Score;
+
+        // الخطوة 3: تخزين النتيجة في الحقل المخفي
+        document.getElementById("hiddenScore").value = score + " / 100";
+
+        // الخطوة 4: الإرسال الآمن لـ Formspree
+        form.submit();
+    }
+</script>
+
+</body>
+</html>
