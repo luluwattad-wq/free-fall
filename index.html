@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head> <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>امتحان الفيزياء - السقوط الحر</title>
+    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+    
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -107,6 +109,7 @@
             font-size: 1.2em;
             cursor: pointer;
             transition: background 0.3s;
+            text-align: center;
         }
         .btn-submit:hover {
             background-color: #22223b;
@@ -131,6 +134,10 @@
             <div class="input-group">
                 <label>الاسم الثلاثي:</label>
                 <input type="text" name="Student_Name" required style="width: 95%;">
+            </div>
+            <div class="input-group">
+                <label>الصف:</label>
+                <input type="text" name="Student_Grade" placeholder="اكتب صفك هنا" required style="width: 95%;">
             </div>
             <div class="input-group">
                 <label>البريد الإلكتروني:</label>
@@ -203,8 +210,9 @@
                     &middot; t + 
                     <input type="number" step="any" name="Q6d_half_g" class="equation-input" placeholder="½g" required> 
                     &middot; t&sup2;
-  
-              </div>
+                </div>
+            </div>
+            <div class="input-group">
                 <label>ب. كم من الوقت بالثواني ستستغرق الكرة للوصول إلى أقصى ارتفاع؟ والذي به تكون سرعتها مساوية لصفر تمامًا؟</label>
                 <input type="number" step="0.1" name="Q6a_Time_Up" required>
             </div>
@@ -215,9 +223,6 @@
             <div class="input-group">
                 <label>د. كم من الوقت بالثواني ستستغرق الكرة للوصول إلى الأرض من لحظة رميها؟</label>
                 <input type="number" step="0.01" name="Q6c_Total_Time" required>
-            </div>
-            <div class="input-group">
-
             </div>
         </div>
 
@@ -243,21 +248,18 @@
             </div>
         </div>
 
-        <button type="button" class="btn-submit" onclick="processAndSubmit()">إرسال الإجابات</button>
+        <button type="submit" class="pageclip-form__submit btn-submit">
+            <span>إرسال الإجابات</span>
+        </button>
     </form>
 </div>
 
 <script>
-    function processAndSubmit() {
-        let form = document.getElementById("quizForm");
+    let form = document.getElementById("quizForm");
+    
+    // نستمع لحدث الإرسال بدلاً من الاعتماد على onclick
+    form.addEventListener("submit", function(event) {
         
-        // الخطوة 1: التحقق من أن الطالب أجاب على جميع الأسئلة
-        if (!form.checkValidity()) {
-            form.reportValidity(); // يعرض تنبيهات المتصفح الحمراء على الحقول الفارغة
-            return; // توقف هنا ولا تكمل
-        }
-
-        // الخطوة 2: حساب النتيجة
         let score = 0;
 
         function getRadioVal(name) {
@@ -314,14 +316,11 @@
         if (q8Score < 0) q8Score = 0;
         score += q8Score;
 
-        // الخطوة 3: تخزين النتيجة في الحقل المخفي
+        // تخزين النتيجة النهائية في الحقل المخفي
         document.getElementById("hiddenScore").value = score + " / 100";
-
-        // الخطوة 4: الإرسال الآمن لـ Formspree
-        form.submit();
-    }
+    });
 </script>
+
 <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
 </body>
 </html>
-
