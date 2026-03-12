@@ -125,9 +125,9 @@
         ملاحظة: لحل الأسئلة الحسابية، افترضوا أن تسارع الجاذبية الأرضية g = 10 m/s&sup2; لتسهيل الحسابات، وتجاهلوا مقاومة الهواء.
     </div>
 
-    <form id="quizForm" action="https://send.pageclip.co/akI6LYCec28vPW4aB4yGck5S9N6vDyu7/freefall" class="pageclip-form" method="post">
+    <form id="quizForm" action="https://send.pageclip.co/akI6LYCec28vPW4aB4yGck5S9N6vDyu7/freefall" class="pageclip-form" method="post" onchange="updateScore()" oninput="updateScore()">
         
-        <input type="hidden" name="Final_Score" id="hiddenScore" value="لم تحسب">
+        <input type="hidden" name="Final_Score" id="hiddenScore" value="0 / 100">
 
         <div class="question-card">
             <div class="question-title">بيانات الطالب</div>
@@ -248,22 +248,15 @@
             </div>
         </div>
 
-        <button type="submit" class="pageclip-form__submit btn-submit" onclick="calculateScore()">
+        <button type="submit" class="pageclip-form__submit btn-submit">
             <span>إرسال الإجابات</span>
         </button>
     </form>
 </div>
 
 <script>
-    function calculateScore() {
-        let form = document.getElementById("quizForm");
-        
-        // التحقق فقط من بيانات الطالب الأساسية
-        if (!form.checkValidity()) {
-            alert("تنبيه: يرجى التأكد من كتابة اسمك، صفك، وبريدك الإلكتروني قبل الإرسال.");
-            return; 
-        }
-
+    // وظيفة تعمل في الخلفية لحساب النتيجة بصمت
+    function updateScore() {
         let score = 0;
 
         function getRadioVal(name) {
@@ -320,7 +313,6 @@
         if (q8Score < 0) q8Score = 0;
         score += q8Score;
 
-        // تخزين النتيجة النهائية في الحقل المخفي قبل الإرسال
         document.getElementById("hiddenScore").value = score + " / 100";
     }
 </script>
