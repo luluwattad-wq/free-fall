@@ -125,7 +125,7 @@
         ملاحظة: لحل الأسئلة الحسابية، افترضوا أن تسارع الجاذبية الأرضية g = 10 m/s&sup2; لتسهيل الحسابات، وتجاهلوا مقاومة الهواء.
     </div>
 
-    <form id="quizForm" action="https://send.pageclip.co/aKI6LYCec28vPW4aB4yGck5S9N6vDyu7/freefall" class="pageclip-form" method="POST">
+    <form id="quizForm" action="https://send.pageclip.co/akI6LYCec28vPW4aB4yGck5S9N6vDyu7/freefall" class="pageclip-form" method="post">
         
         <input type="hidden" name="Final_Score" id="hiddenScore" value="لم تحسب">
 
@@ -280,7 +280,7 @@
                 let val = parseFloat(elements[0].value);
                 return isNaN(val) ? 0 : val;
             }
-            return 0; // إذا ترك الطالب الحقل فارغاً، تعتبر القيمة صفراً لغرض الحساب
+            return 0; 
         }
 
         if (getRadioVal("Q1_Definition") === "جاذبية فقط") score += 10;
