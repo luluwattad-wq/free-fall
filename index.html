@@ -148,7 +148,7 @@
         <div class="question-card">
             <div class="question-title">السؤال 1: ما هو تعريف السقوط الحر؟</div>
             <div class="options">
-                <label><input type="radio" name="Q1_Definition" value="حركة للأسفل" required> حركة جسم يتحرك للأسفل.</label>
+                <label><input type="radio" name="Q1_Definition" value="حركة للأسفل"> حركة جسم يتحرك للأسفل.</label>
                 <label><input type="radio" name="Q1_Definition" value="جاذبية فقط"> حركة تحت تأثير قوة الجاذبية فقط.</label>
                 <label><input type="radio" name="Q1_Definition" value="من أقصى ارتفاع"> حركة جسم يسقط من لحظة وصوله إلى أقصى ارتفاع ويبدأ في السقوط.</label>
                 <label><input type="radio" name="Q1_Definition" value="إفلات على الأرض"> حركة جسم يتم تحريره من حالة سكون على كوكب الأرض.</label>
@@ -160,18 +160,18 @@
             <div class="input-group">
                 <img src="https://i.postimg.cc/2SLn41LF/Picture1.png" alt="صورة السؤال" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px;">
                 <label>أ. كم من الوقت سيمضي بالثواني حتى تصطدم العملة بالأرض؟</label>
-                <input type="number" step="0.01" name="Q2a_Time" required>
+                <input type="number" step="0.01" name="Q2a_Time">
             </div>
             <div class="input-group">
                 <label>ب. بأي سرعة ستصطدم العملة بالأرض؟ (m/s)</label>
-                <input type="number" step="0.1" name="Q2b_Velocity" required>
+                <input type="number" step="0.1" name="Q2b_Velocity">
             </div>
         </div>
 
         <div class="question-card">
             <div class="question-title">السؤال 3: صح / خطأ: إذا سقطت عملة من فئة 5 شيكل بدلاً من عملة الشيكل، فإنها ستصل إلى الأرض في وقت أقصر.</div>
             <div class="options">
-                <label><input type="radio" name="Q3_Mass_Effect" value="صحيح" required> صحيح</label>
+                <label><input type="radio" name="Q3_Mass_Effect" value="صحيح"> صحيح</label>
                 <label><input type="radio" name="Q3_Mass_Effect" value="غير صحيح"> غير صحيح</label>
             </div>
         </div>
@@ -179,7 +179,7 @@
         <div class="question-card">
             <div class="question-title">السؤال 4: كيف سيتغير الوقت الذي تستغرقه العملة للاصطدام بالأرض إذا سقطت من ارتفاع أقل بـ 4 مرات؟</div>
             <div class="options">
-                <label><input type="radio" name="Q4_Height_Change" value="أقل بـ 4 مرات" required> سيكون الوقت أقل بـ 4 مرات.</label>
+                <label><input type="radio" name="Q4_Height_Change" value="أقل بـ 4 مرات"> سيكون الوقت أقل بـ 4 مرات.</label>
                 <label><input type="radio" name="Q4_Height_Change" value="أقل بـ 16 مرة"> سيكون الوقت أقل بـ 16 مرة.</label>
                 <label><input type="radio" name="Q4_Height_Change" value="أقل بـ 2 مرات"> سيكون الوقت أقل بـ 2 مرات (النصف).</label>
                 <label><input type="radio" name="Q4_Height_Change" value="لن يتغير"> لن يتغير الوقت.</label>
@@ -189,7 +189,7 @@
         <div class="question-card">
             <div class="question-title">السؤال 5: تلعب روني كرة الطائرة وترمي الكرة إلى أعلى تماماً. سنحدد محور موقع نقطة أصله على الأرض واتجاهه الموجب نحو الأعلى. اختر العبارة الصحيحة:</div>
             <div class="options">
-                <label><input type="radio" name="Q5_Acceleration_Direction" value="سالب دائماً" required> تسارع الكرة سالب طوال فترة حركتها.</label>
+                <label><input type="radio" name="Q5_Acceleration_Direction" value="سالب دائماً"> تسارع الكرة سالب طوال فترة حركتها.</label>
                 <label><input type="radio" name="Q5_Acceleration_Direction" value="موجب ثم سالب"> تسارع الكرة موجب حتى أقصى ارتفاع ثم يصبح سالباً.</label>
                 <label><input type="radio" name="Q5_Acceleration_Direction" value="موجب دائماً"> تسارع الكرة موجب طوال فترة حركتها.</label>
                 <label><input type="radio" name="Q5_Acceleration_Direction" value="سالب ثم موجب"> تسارع الكرة سالب حتى أقصى ارتفاع وبعد ذلك يصبح موجباً.</label>
@@ -204,32 +204,32 @@
                 <label>أ. اكتبوا معادلة حركة الكرة. أدخلوا القيم العددية فقط في المربعات المناسبة لتعويض المعاملات (y₀, v₀, ½g):</label>
                 <div class="equation-container">
                     y(t) = 
-                    <input type="number" step="any" name="Q6d_y0" class="equation-input" placeholder="y₀" required> 
+                    <input type="number" step="any" name="Q6d_y0" class="equation-input" placeholder="y₀"> 
                     + 
-                    <input type="number" step="any" name="Q6d_v0" class="equation-input" placeholder="v₀" required> 
+                    <input type="number" step="any" name="Q6d_v0" class="equation-input" placeholder="v₀"> 
                     &middot; t + 
-                    <input type="number" step="any" name="Q6d_half_g" class="equation-input" placeholder="½g" required> 
+                    <input type="number" step="any" name="Q6d_half_g" class="equation-input" placeholder="½g"> 
                     &middot; t&sup2;
                 </div>
             </div>
             <div class="input-group">
                 <label>ب. كم من الوقت بالثواني ستستغرق الكرة للوصول إلى أقصى ارتفاع؟ والذي به تكون سرعتها مساوية لصفر تمامًا؟</label>
-                <input type="number" step="0.1" name="Q6a_Time_Up" required>
+                <input type="number" step="0.1" name="Q6a_Time_Up">
             </div>
             <div class="input-group">
                 <label>ج. ما هو أقصى ارتفاع بالأمتار ستصل إليه الكرة (بالنسبة للأرض)؟</label>
-                <input type="number" step="0.1" name="Q6b_Max_Height" required>
+                <input type="number" step="0.1" name="Q6b_Max_Height">
             </div>
             <div class="input-group">
                 <label>د. كم من الوقت بالثواني ستستغرق الكرة للوصول إلى الأرض من لحظة رميها؟</label>
-                <input type="number" step="0.01" name="Q6c_Total_Time" required>
+                <input type="number" step="0.01" name="Q6c_Total_Time">
             </div>
         </div>
 
         <div class="question-card">
             <div class="question-title">السؤال 7: تدّعي روني أنه عند أقصى ارتفاع تصبح سرعة الكرة صفراً، ولذلك فإن تسارعها أيضاً يصبح صفراً هناك. هل ادعاؤها صحيح؟</div>
             <div class="options">
-                <label><input type="radio" name="Q7_Zero_Velocity_Acceleration" value="صحيح" required> صحيح</label>
+                <label><input type="radio" name="Q7_Zero_Velocity_Acceleration" value="صحيح"> صحيح</label>
                 <label><input type="radio" name="Q7_Zero_Velocity_Acceleration" value="غير صحيح"> غير صحيح</label>
             </div>
         </div>
@@ -248,18 +248,22 @@
             </div>
         </div>
 
-        <button type="submit" class="pageclip-form__submit btn-submit">
+        <button type="submit" class="pageclip-form__submit btn-submit" onclick="calculateScore()">
             <span>إرسال الإجابات</span>
         </button>
     </form>
 </div>
 
 <script>
-    let form = document.getElementById("quizForm");
-    
-    // نستمع لحدث الإرسال بدلاً من الاعتماد على onclick
-    form.addEventListener("submit", function(event) {
+    function calculateScore() {
+        let form = document.getElementById("quizForm");
         
+        // التحقق فقط من بيانات الطالب الأساسية
+        if (!form.checkValidity()) {
+            alert("تنبيه: يرجى التأكد من كتابة اسمك، صفك، وبريدك الإلكتروني قبل الإرسال.");
+            return; 
+        }
+
         let score = 0;
 
         function getRadioVal(name) {
@@ -272,11 +276,11 @@
 
         function getNumVal(name) {
             let elements = document.getElementsByName(name);
-            if(elements.length > 0) {
+            if(elements.length > 0 && elements[0].value !== "") {
                 let val = parseFloat(elements[0].value);
                 return isNaN(val) ? 0 : val;
             }
-            return 0;
+            return 0; // إذا ترك الطالب الحقل فارغاً، تعتبر القيمة صفراً لغرض الحساب
         }
 
         if (getRadioVal("Q1_Definition") === "جاذبية فقط") score += 10;
@@ -316,9 +320,9 @@
         if (q8Score < 0) q8Score = 0;
         score += q8Score;
 
-        // تخزين النتيجة النهائية في الحقل المخفي
+        // تخزين النتيجة النهائية في الحقل المخفي قبل الإرسال
         document.getElementById("hiddenScore").value = score + " / 100";
-    });
+    }
 </script>
 
 <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
